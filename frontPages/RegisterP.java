@@ -74,7 +74,7 @@ public class RegisterP extends JFrame {
 		getContentPane().add(panel);
 		panel.setLayout(null);
 		
-		JLabel lblKesarMedicalStore = new JLabel("AITU MEDICAL STORE");
+		JLabel lblKesarMedicalStore = new JLabel("EBOOKS");
 		lblKesarMedicalStore.setHorizontalAlignment(SwingConstants.CENTER);
 		lblKesarMedicalStore.setFont(new Font("Britannic Bold", Font.BOLD, 55));
 		lblKesarMedicalStore.setBackground(Color.BLACK);
@@ -83,20 +83,11 @@ public class RegisterP extends JFrame {
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setBounds(1005, 6, 118, 73);
-		ImageIcon i3=new ImageIcon("M:\\My Projects\\Medical Management System\\Medical Store\\image\\plus.png");
-		Image image3=i3.getImage();
-		Image imgScale3=image3.getScaledInstance(lblNewLabel.getWidth(),lblNewLabel.getHeight(),Image.SCALE_SMOOTH);
-		ImageIcon scaledIcon3=new ImageIcon(imgScale3);
-		lblNewLabel.setIcon(scaledIcon3);
+	
 		panel.add(lblNewLabel);
 		
 		JLabel label = new JLabel("");
 		label.setBounds(195, 0, 111, 86);
-		ImageIcon i=new ImageIcon("M:\\My Projects\\Medical Management System\\Medical Store\\image\\chekgold.png");
-		Image image=i.getImage();
-		Image imgScale=image.getScaledInstance(label.getWidth(),label.getHeight(),Image.SCALE_SMOOTH);
-		ImageIcon scaledIcon=new ImageIcon(imgScale);
-		label.setIcon(scaledIcon);
 		panel.add(label);
 		panel1.setBorder(new LineBorder(new Color(0, 0, 0), 4));
 		panel1.setBounds(0, 96, 1352, 554);
@@ -361,14 +352,6 @@ public class RegisterP extends JFrame {
 		btnRegister.setBounds(690, 458, 105, 29);
 		panel1.add(btnRegister);
 		
-		JLabel label_4 = new JLabel("");
-		label_4.setBounds(634, 458, 46, 29);
-		ImageIcon i5=new ImageIcon("M:\\My Projects\\Medical Management System\\Medical Store\\image\\loginlogo.png");
-		Image image5=i5.getImage();
-		Image imgScale5=image5.getScaledInstance(label_4.getWidth(),label_4.getHeight(),Image.SCALE_SMOOTH);
-		ImageIcon scaledIcon5=new ImageIcon(imgScale5);
-		label_4.setIcon(scaledIcon5);
-		panel1.add(label_4);
 		
 		JSeparator separator_1 = new JSeparator();
 		separator_1.setBackground(Color.BLACK);
@@ -408,47 +391,5 @@ public class RegisterP extends JFrame {
 		separator_2.setBounds(430, 500, 378, 2);
 		panel1.add(separator_2);
 		
-		JLabel label_1 = new JLabel("");
-		label_1.setBounds(92, 51, 295, 410);
-		ImageIcon i6=new ImageIcon("M:\\My Projects\\Medical Management System\\Medical Store\\image\\doc1.png");
-		Image image6=i6.getImage();
-		Image imgScale6=image6.getScaledInstance(label_1.getWidth(),label_1.getHeight(),Image.SCALE_SMOOTH);
-		ImageIcon scaledIcon6=new ImageIcon(imgScale6);
-		label_1.setIcon(scaledIcon6);
-		panel1.add(label_1);
-		
-		JLabel label_2 = new JLabel("");
-		label_2.setBounds(1045, 51, 281, 396);
-		ImageIcon i2=new ImageIcon("M:\\My Projects\\Medical Management System\\Medical Store\\image\\doc.png");
-		Image image2=i2.getImage();
-		Image imgScale2=image2.getScaledInstance(label_2.getWidth(),label_2.getHeight(),Image.SCALE_SMOOTH);
-		ImageIcon scaledIcon2=new ImageIcon(imgScale2);
-		label_2.setIcon(scaledIcon2);
-		panel1.add(label_2);
-		
-		JLabel lblForgetPassword = new JLabel("forget password");
-		lblForgetPassword.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				EventQueue.invokeLater(new Runnable() {
-					public void run() {
-						try {
-							ForgetP f = new ForgetP();
-							f.setVisible(true);
-							dispose();
-						} catch (Exception e) {
-							e.printStackTrace();
-						}
-					}
-				});
-			}
-		});
-		lblForgetPassword.setForeground(Color.RED);
-		lblForgetPassword.setFont(new Font("Tahoma", Font.BOLD, 12));
-		lblForgetPassword.setBounds(461, 459, 119, 25);
-		panel1.add(lblForgetPassword);
-		
-		
 	}
-
 }

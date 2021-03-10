@@ -25,20 +25,16 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
-import medicine.Medicine;
+import books.Books;
 import utility.DBUtility;
 
 public class AddM extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField name;
-	private JTextField quantity;
 	private JTextField manu;
 	private JTextField expiry;
-	private JTextField rate;
-	private JTextField mrp;
-	private JTextField gst;
-
+	
 	/**
 	 * Launch the application.
 	 */
@@ -73,39 +69,22 @@ public class AddM extends JFrame {
 		getContentPane().add(panel);
 		panel.setLayout(null);
 		
-		JLabel lblKesarMedicalStore = new JLabel("AITU MEDICAL STORE");
-		lblKesarMedicalStore.setHorizontalAlignment(SwingConstants.CENTER);
-		lblKesarMedicalStore.setFont(new Font("Britannic Bold", Font.BOLD, 55));
-		lblKesarMedicalStore.setBackground(Color.BLACK);
-		lblKesarMedicalStore.setBounds(27, 11, 1275, 64);
-		panel.add(lblKesarMedicalStore);
+		JLabel lblKesarBook = new JLabel("EBOOKS");
+		lblKesarBook.setHorizontalAlignment(SwingConstants.CENTER);
+		lblKesarBook.setFont(new Font("Britannic Bold", Font.BOLD, 55));
+		lblKesarBook.setBackground(Color.BLACK);
+		lblKesarBook.setBounds(27, 11, 1275, 64);
+		panel.add(lblKesarBook);
 		
-		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setBounds(1005, 6, 118, 73);
-		ImageIcon i3=new ImageIcon("M:\\My Projects\\Medical Management System\\Medical Store\\image\\plus.png");
-		Image image3=i3.getImage();
-		Image imgScale3=image3.getScaledInstance(lblNewLabel.getWidth(),lblNewLabel.getHeight(),Image.SCALE_SMOOTH);
-		ImageIcon scaledIcon3=new ImageIcon(imgScale3);
-		lblNewLabel.setIcon(scaledIcon3);
-		panel.add(lblNewLabel);
-		
-		JLabel label = new JLabel("");
-		label.setBounds(195, 0, 111, 86);
-		ImageIcon i=new ImageIcon("M:\\My Projects\\Medical Management System\\Medical Store\\image\\chekgold.png");
-		Image image=i.getImage();
-		Image imgScale=image.getScaledInstance(label.getWidth(),label.getHeight(),Image.SCALE_SMOOTH);
-		ImageIcon scaledIcon=new ImageIcon(imgScale);
-		label.setIcon(scaledIcon);
-		panel.add(label);
-		
-		
+
+			
 		JPanel panel_1 = new JPanel();
 		panel_1.setBorder(new LineBorder(new Color(0, 0, 0), 4));
 		panel_1.setBounds(0, 97, 1352, 557);
 		getContentPane().add(panel_1);
 		panel_1.setLayout(null);
 		
-		JLabel lblAddMedicine = new JLabel("ADD MEDICINE");
+		JLabel lblAddMedicine = new JLabel("ADD BOOKS");
 		lblAddMedicine.setForeground(new Color(0, 0, 139));
 		lblAddMedicine.setFont(new Font("Britannic Bold", Font.BOLD, 30));
 		lblAddMedicine.setHorizontalAlignment(SwingConstants.CENTER);
@@ -153,22 +132,6 @@ public class AddM extends JFrame {
 		}
 		panel_1.add(company);
 		
-		
-		
-		quantity = new JTextField();
-		quantity.setForeground(new Color(0, 0, 0));
-		quantity.setHorizontalAlignment(SwingConstants.CENTER);
-		quantity.setColumns(10);
-		quantity.setBounds(755, 120, 161, 32);
-		panel_1.add(quantity);
-		
-		JLabel lblQuantity = new JLabel("Quantity:-");
-		lblQuantity.setFont(new Font("Tahoma", Font.BOLD, 20));
-		lblQuantity.setBounds(611, 133, 111, 19);
-		panel_1.add(lblQuantity);
-		
-		
-		
 		JLabel lblManuDate = new JLabel("Manu. Date:-");
 		lblManuDate.setFont(new Font("Tahoma", Font.BOLD, 20));
 		lblManuDate.setBounds(41, 237, 134, 19);
@@ -191,59 +154,6 @@ public class AddM extends JFrame {
 		lblExpiryDate.setBounds(611, 237, 134, 19);
 		panel_1.add(lblExpiryDate);
 		
-		rate = new JTextField();
-		rate.setHorizontalAlignment(SwingConstants.CENTER);
-		rate.setColumns(10);
-		rate.setBounds(185, 277, 215, 32);
-		panel_1.add(rate);
-		
-		JLabel lblRate = new JLabel("Rate:-");
-		lblRate.setHorizontalAlignment(SwingConstants.CENTER);
-		lblRate.setFont(new Font("Tahoma", Font.BOLD, 20));
-		lblRate.setBounds(41, 290, 134, 19);
-		panel_1.add(lblRate);
-		
-		JLabel lblMrp = new JLabel("MRP.");
-		lblMrp.setHorizontalAlignment(SwingConstants.CENTER);
-		lblMrp.setFont(new Font("Tahoma", Font.BOLD, 20));
-		lblMrp.setBounds(611, 290, 134, 19);
-		panel_1.add(lblMrp);
-		
-		mrp = new JTextField();
-		mrp.setHorizontalAlignment(SwingConstants.CENTER);
-		mrp.setColumns(10);
-		mrp.setBounds(755, 277, 161, 32);
-		panel_1.add(mrp);
-		
-		JLabel lblGst = new JLabel("GST (in %):-");
-		lblGst.setHorizontalAlignment(SwingConstants.CENTER);
-		lblGst.setFont(new Font("Tahoma", Font.BOLD, 20));
-		lblGst.setBounds(41, 343, 134, 19);
-		panel_1.add(lblGst);
-		
-		gst = new JTextField();
-		gst.setHorizontalAlignment(SwingConstants.CENTER);
-		gst.setColumns(10);
-		gst.setBounds(185, 330, 215, 32);
-		panel_1.add(gst);
-		
-		JLabel lblType = new JLabel("Type:-");
-		lblType.setHorizontalAlignment(SwingConstants.CENTER);
-		lblType.setFont(new Font("Tahoma", Font.BOLD, 20));
-		lblType.setBounds(611, 179, 119, 32);
-		panel_1.add(lblType);
-		
-		JComboBox typeM = new JComboBox();
-		typeM.setBounds(755, 174, 161, 31);
-		typeM.addItem("");
-		typeM.addItem("Syrup");
-		typeM.addItem("Tablet");
-		typeM.addItem("Capsules");
-		typeM.addItem("Injection");
-		typeM.addItem("Inhaler");
-		
-		panel_1.add(typeM);
-		
 		JLabel v1 = new JLabel("*");
 		v1.setForeground(new Color(255, 0, 0));
 		v1.setBounds(423, 120, 193, 32);
@@ -259,48 +169,13 @@ public class AddM extends JFrame {
 		v3.setBounds(423, 224, 193, 32);
 		panel_1.add(v3);
 		
-		JLabel v4 = new JLabel("*");
-		v4.setForeground(new Color(255, 0, 0));
-		v4.setBounds(423, 277, 193, 32);
-		panel_1.add(v4);
+
 		
-		JLabel v5 = new JLabel("*");
-		v5.setForeground(new Color(255, 0, 0));
-		v5.setBounds(423, 330, 193, 32);
-		panel_1.add(v5);
-		
-		JLabel v6 = new JLabel("*");
-		v6.setForeground(new Color(255, 0, 0));
-		v6.setBounds(937, 120, 149, 32);
-		panel_1.add(v6);
-		
-		JLabel v7 = new JLabel("*");
-		v7.setForeground(new Color(255, 0, 0));
-		v7.setBounds(937, 174, 149, 32);
-		panel_1.add(v7);
-		
-		JLabel v8 = new JLabel("*");
-		v8.setForeground(new Color(255, 0, 0));
-		v8.setBounds(937, 224, 149, 32);
-		panel_1.add(v8);
-		
-		JLabel v9 = new JLabel("*");
-		v9.setForeground(new Color(255, 0, 0));
-		v9.setBounds(937, 277, 149, 32);
-		panel_1.add(v9);
-		
-		JButton btnAddMedicine = new JButton("Add Medicine");
+		JButton btnAddMedicine = new JButton("Add Books");
 		btnAddMedicine.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String mname=name.getText();
 				String com=(String)company.getSelectedItem();
-				String Gst=gst.getText();
-				String Rate=rate.getText();
-				String Man=manu.getText();
-				String exp=expiry.getText();
-				String quan=quantity.getText();
-				String type=(String)typeM.getSelectedItem();
-				String Mrp=mrp.getText();
 				
 				if(mname.trim().isEmpty())
 				{
@@ -312,75 +187,34 @@ public class AddM extends JFrame {
 					v2.setText("select Company");
 				}
 				
-				else if(Man.trim().isEmpty())
-				{
-					v3.setText("This field is required");
-				}
-				
-				else if(Rate.trim().isEmpty())
-				{
-					v4.setText("This field is required");
-				}
-				
-				else if(Gst.trim().isEmpty())
-				{
-					v5.setText("This field is required");
-				}
-				
-				else if(quan.trim().isEmpty())
-				{
-					v6.setText("This field is required");
-				}
-				
-				else if(type=="")
-				{
-					v7.setText("Select Medicine type");
-				}
-				
-				else if(exp.trim().isEmpty())
-				{
-					v8.setText("This field is required");
-				}
-				
-				else if(Mrp.trim().isEmpty())
-				{
-					v9.setText("This field is required");
-				}
-				
+
+							
 				else
 				{
 				
-				  if(type!="" && com!="")
 				  {
-					Medicine m=new Medicine();
-					boolean status =m.alreadyMedicine(mname);
+					Books m=new Books();
+					boolean status =m.alreadyBooks(mname);
 					if(status==false)
 					{
-						boolean status1=m.addMedicine(mname, com, Man, exp, Rate, Mrp, Gst, quan, type);
+						boolean status1=m.addBooks(mname,com );
 						if(status1==true)
 						{
-							JOptionPane.showMessageDialog(null,"Medicine Successfully Added.");
+							JOptionPane.showMessageDialog(null,"Books Successfully Added.");
 							name.setText("");
-							company.setSelectedItem("");
-							gst.setText("");
-							rate.setText("");
 							manu.setText("");
 							expiry.setText("");
-							quantity.setText("");
-							typeM.setSelectedItem("");
-							mrp.setText("");
-							
-							
+					
 						}
 						else
 						{
-							JOptionPane.showMessageDialog(null,"Failed to Add Medicine.");
+							JOptionPane.showMessageDialog(null,"Failed to Add Books.");
 						}
 					}
 					
 					else
 					{
-						JOptionPane.showMessageDialog(null,"This medicine is already added.");
+						JOptionPane.showMessageDialog(null,"This books is already added.");
 					}
 				  }
 				
@@ -392,7 +226,7 @@ public class AddM extends JFrame {
 		btnAddMedicine.setBounds(373, 419, 316, 32);
 		panel_1.add(btnAddMedicine);
 		
-		JButton btnBack = new JButton(" Back <----");
+		JButton btnBack = new JButton(" Back ");
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
@@ -408,14 +242,7 @@ public class AddM extends JFrame {
 		btnBack.setBounds(10, 11, 89, 23);
 		panel_1.add(btnBack);
 		
-		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setBounds(1111, 117, 215, 198);
-		ImageIcon i6=new ImageIcon("M:\\My Projects\\Medical Management System\\Medical Store\\image\\mask.jpeg");
-		Image image6=i6.getImage();
-		Image imgScale6=image6.getScaledInstance(lblNewLabel_1.getWidth(),lblNewLabel_1.getHeight(),Image.SCALE_SMOOTH);
-		ImageIcon scaledIcon6=new ImageIcon(imgScale6);
-		lblNewLabel_1.setIcon(scaledIcon6);
-		panel_1.add(lblNewLabel_1);
+	
 	}
 
 }

@@ -11,7 +11,7 @@ public class DBUtility
 		try
 		{
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/medicalStore?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC","root","888bbb08lx");
+			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/eBook","root","888bbb08lx");  ;
 			
 		}
 		catch(Exception e)

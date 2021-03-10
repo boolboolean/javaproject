@@ -15,7 +15,7 @@ public class Signup
     	Connection con=utility.DBUtility.connection();
     	String query="insert into login values(?,?,?,?,?,?)";
     	try
-    	{
+    	{ 
     	    PreparedStatement stmt= con.prepareStatement(query);
     	    stmt.setString(1,firstName);
     	    stmt.setString(2,lastName);

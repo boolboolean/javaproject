@@ -23,7 +23,7 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
-import medicine.Company;
+import books.Company;
 
 public class AddC extends JFrame {
 
@@ -66,7 +66,7 @@ public class AddC extends JFrame {
 		getContentPane().add(panel);
 		panel.setLayout(null);
 		
-		JLabel lblKesarMedicalStore = new JLabel("AITU MEDICAL STORE");
+		JLabel lblKesarMedicalStore = new JLabel("EBOOKS");
 		lblKesarMedicalStore.setHorizontalAlignment(SwingConstants.CENTER);
 		lblKesarMedicalStore.setFont(new Font("Britannic Bold", Font.BOLD, 55));
 		lblKesarMedicalStore.setBackground(Color.BLACK);
@@ -270,30 +270,6 @@ public class AddC extends JFrame {
 		btnAddCompany.setBounds(199, 413, 294, 32);
 		panel_1.add(btnAddCompany);
 		
-		JButton btnBack = new JButton(" Back <----");
-		btnBack.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				try {
-				    TotalC t = new TotalC();
-				    t.setVisible(true);
-					dispose();
-				} catch (Exception e1) {
-					e1.printStackTrace();
-				}
-				
-			}
-		});
-		btnBack.setBounds(10, 11, 89, 23);
-		panel_1.add(btnBack);
-		
-		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setBounds(711, 113, 590, 332);
-		ImageIcon i6=new ImageIcon("M:\\My Projects\\Medical Management System\\Medical Store\\image\\industry.jpg");
-		Image image6=i6.getImage();
-		Image imgScale6=image6.getScaledInstance(lblNewLabel_1.getWidth(),lblNewLabel_1.getHeight(),Image.SCALE_SMOOTH);
-		ImageIcon scaledIcon6=new ImageIcon(imgScale6);
-		lblNewLabel_1.setIcon(scaledIcon6);
-		panel_1.add(lblNewLabel_1);
 	}
 
 }
